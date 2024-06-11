@@ -3,6 +3,8 @@ import streamlit as st
 
 import available
 
+st.set_page_config(page_title="GBB 全出場者一覧")
+
 st.title('GBB全出場者一覧')
 
 # 年度を選択

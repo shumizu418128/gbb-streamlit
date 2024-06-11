@@ -3,6 +3,8 @@ import streamlit as st
 
 import available
 
+st.set_page_config(page_title="GBB 辞退者一覧")
+
 # Set up Streamlit
 st.title('辞退者一覧')
 
