@@ -41,3 +41,5 @@ st.page_link(
 st.markdown('---')
 
 st.link_button("GBBINFO-JPN", "https://gbbinfo-jpn.jimdofree.com/")
+
+st.markdown("made by [GBBINFO-JPN](https://gbbinfo-jpn.jimdofree.com/) owner NOT swissbeatbox")
