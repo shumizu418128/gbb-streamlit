@@ -3,12 +3,14 @@ import pandas as pd
 import streamlit as st
 from streamlit_folium import folium_static
 
+import available
+
 # Set up Streamlit
 st.set_page_config(page_title="GBB出場者 世界地図", layout="wide")
 st.title('GBB出場者 世界地図')
 
 # 年度を選択
-years = [2024]
+years = available.years
 
 # Option to filter by year
 selected_year = st.selectbox('GBB開催年', options=years)
@@ -21,7 +23,8 @@ countries_df = pd.read_csv('countries.csv')
 beatboxers_df = beatboxers_df.fillna("")
 
 # beatboxers_dfから、名前に[cancelled]がついている人を削除
-beatboxers_df = beatboxers_df[~beatboxers_df["name"].str.contains(r"\[cancelled\]", case=False)]
+beatboxers_df = beatboxers_df[~beatboxers_df["name"].str.contains(
+    r"\[cancelled\]", case=False)]
 
 # Initialize a folium map centered around the average latitude and longitude
 map_center = [20, 0]
