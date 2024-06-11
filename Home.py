@@ -24,7 +24,7 @@ st.page_link(
 )
 st.page_link(
     "pages/辞退者.py",
-    label="GBB出場者 キャンセル一覧",
+    label="GBB辞退者一覧",
     icon="😭",
     help="GBB出場をキャンセルした方の一覧です。",
     use_container_width=True
