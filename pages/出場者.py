@@ -93,12 +93,12 @@ if all([selected_category, selected_ticket_class, selected_country]):
     if beatboxers_df['members'].isnull().all():
         beatboxers_df = beatboxers_df.drop(['members'], axis=1)
 
+    st.markdown('---')
+
     # カテゴリーが指定されている場合、カテゴリー列を削除
     if selected_category != "すべて":
         beatboxers_df = beatboxers_df.drop(['category'], axis=1)
-
-    # 選択しているフィルター条件を表示
-    st.markdown('---')
+        st.text(f'【選択中のカテゴリー】{selected_category}')
 
     # Display filtered data
     if beatboxers_df.empty:
