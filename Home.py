@@ -30,6 +30,13 @@ st.page_link(
     use_container_width=True
 )
 st.page_link(
+    "pages/結果.py",
+    label="GBB 最終結果一覧",
+    icon="🏆",
+    help="GBBの結果一覧です。",
+    use_container_width=True
+)
+st.page_link(
     "pages/chat.py",
     label="GBBINFO-AI (準備中)",
     icon="🤖",

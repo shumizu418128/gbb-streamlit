@@ -103,21 +103,23 @@ if all([selected_category, selected_ticket_class, selected_country]):
 
     # Display filtered data
     if beatboxers_df.empty:
-        st.subheader('😭該当するデータがありません')
+        error = "該当するデータがありません。"
 
         # 条件が「すべて」になっていない条件を調べる
         if selected_country != "すべて":
-            st.write('ヒント：出身国を「すべて」に設定してみて！')
+            error += ' 【ヒント：出身国を「すべて」に設定してみて！】'
         elif selected_ticket_class != "すべて":
-            st.write('ヒント：出場区分を「すべて」に設定してみて！')
+            error += ' 【ヒント：出場区分を「すべて」に設定してみて！】'
         elif selected_category != "すべて":
-            st.write('ヒント：カテゴリーを「すべて」に設定してみて！')
+            error += ' 【ヒント：カテゴリーを「すべて」に設定してみて！】'
+
+        st.error(error, icon="😭")
 
         st.text(
             f'【選択中の条件】 出場区分: {selected_ticket_class}、カテゴリー: {selected_category}、出身国: {selected_country}')
 
     else:
-        st.write(beatboxers_df)
+        st.dataframe(beatboxers_df)
 
 # 各種リンク
 st.markdown('---')
