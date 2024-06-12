@@ -114,6 +114,7 @@ for (lat, lon), group in coord_participants:
     ).add_to(beatboxer_map)
 
 # Display the map
+st.write("国旗をクリックすると、その国の出場者を確認できます。")
 st.markdown("""
     <style>
     iframe {
