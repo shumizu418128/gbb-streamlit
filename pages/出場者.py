@@ -126,7 +126,3 @@ st.link_button("GBBdata-lab トップページ", "Home",
                type="primary", use_container_width=True)
 
 st.link_button('GBBINFO-JPN', 'https://gbbinfo-jpn.jimdofree.com/')
-
-# 最終更新日を表示
-last_updated = available.get_last_updated()
-st.write(f"最終更新日: {last_updated}")
