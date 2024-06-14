@@ -16,6 +16,8 @@ selected_year = st.selectbox('GBB開催年', options=years)
 # Load data from CSV files
 try:
     results_df = pd.read_csv(f'gbb{selected_year}_result.csv')
+    results_df.columns = ["カテゴリー", "1位", "2位", "3位"]
+    results_df = results_df.fillna("-")
 
 except pd.errors.EmptyDataError:
     st.error('データが見つかりませんでした。更新をお待ちください。')

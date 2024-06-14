@@ -30,13 +30,23 @@ cancelled_beatboxers_df = beatboxers_df[beatboxers_df['name'].str.startswith(
 cancelled_beatboxers_df.loc[:, 'name'] = cancelled_beatboxers_df['name'].str.replace(
     '[cancelled]', '')
 
+# iso_codeから出身国名（日本語）を取得
+cancelled_beatboxers_df = cancelled_beatboxers_df.merge(
+    countries_df[['iso_code', 'name_ja']], on='iso_code', how='left')
+
 # delete unnecessary columns
 cancelled_beatboxers_df = cancelled_beatboxers_df.drop(
     ['iso_code', "name_country"], axis=1)
 
+# columnsを日本語に変換
+cancelled_beatboxers_df.columns = ['名前', 'カテゴリー', '出場区分', 'メンバー', '出身国']
+
 # cancelled_beatboxers_dfのmembers列がすべて無い場合、members列を削除
-if cancelled_beatboxers_df['members'].isnull().all():
-    cancelled_beatboxers_df = cancelled_beatboxers_df.drop(['members'], axis=1)
+if cancelled_beatboxers_df['メンバー'].isnull().all():
+    cancelled_beatboxers_df = cancelled_beatboxers_df.drop(['メンバー'], axis=1)
+
+# nanを-に変換
+cancelled_beatboxers_df = cancelled_beatboxers_df.fillna("-")
 
 # Display the cancelled beatboxers data
 st.dataframe(cancelled_beatboxers_df)

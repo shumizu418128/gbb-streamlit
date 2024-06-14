@@ -128,6 +128,17 @@ st.markdown("""
             )
 folium_static(beatboxer_map)
 
+# 国別出場者数
+st.subheader("各国 出場者・チーム数")
+country_counts = beatboxers_df["name_country"].value_counts()
+country_counts = country_counts.reset_index()
+
+# 国名を日本語に変換
+country_counts['name_country'] = country_counts['name_country'].map(countries_df.set_index('name')['name_ja'])
+country_counts.columns = ["国", "出場者・チーム数"]
+
+st.write(country_counts)
+
 st.markdown("---")
 
 st.link_button("GBBdata-lab トップページ", "Home",

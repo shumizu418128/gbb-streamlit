@@ -91,14 +91,20 @@ if all([selected_category, selected_ticket_class, selected_country]):
     # delete unnecessary columns
     beatboxers_df = beatboxers_df.drop(['iso_code', "name_country"], axis=1)
 
-    # beatboxers_dfのmembers列がすべて無い場合、members列を削除
-    if beatboxers_df['members'].isnull().all():
-        beatboxers_df = beatboxers_df.drop(['members'], axis=1)
+    # columnsを日本語に変換
+    beatboxers_df.columns = ['名前', 'カテゴリー', '出場区分', 'メンバー', '出身国']
+
+    # メンバー列がすべて無い場合、メンバー列を削除
+    if beatboxers_df['メンバー'].isnull().all():
+        beatboxers_df = beatboxers_df.drop(['メンバー'], axis=1)
+
+    # nanを-に変換
+    beatboxers_df = beatboxers_df.fillna("-")
 
     # カテゴリーが指定されている場合、カテゴリー列を削除
     if selected_category != "すべて" and not beatboxers_df.empty:
         st.markdown('---')
-        beatboxers_df = beatboxers_df.drop(['category'], axis=1)
+        beatboxers_df = beatboxers_df.drop(['カテゴリー'], axis=1)
         st.text(f'【選択中のカテゴリー】{selected_category}')
 
     # Display filtered data
