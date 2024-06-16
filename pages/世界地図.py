@@ -57,7 +57,7 @@ for (lat, lon), group in coord_participants:
     country_data = countries_df[countries_df["iso_code"] == iso_code]
     country_name_ja = country_data["name_ja"].values[0]
 
-    location = (group["lat"].values[0], group["lon"].values[0])
+    location = (lat, lon)
 
     popup_content = '<div style="font-family: Noto sans JP; font-size: 14px;">'
     popup_content += f'<h3 style="margin: 0; color: #F0632F;">{country_name}</h3>'
