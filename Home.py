@@ -5,48 +5,8 @@ st.set_page_config(
 )
 
 st.title('GBBdata-lab')
-st.subheader('ようこそ')
-st.write('Grand Beatbox Battle 各種データ ページへのリンク')
+st.write("当ページはサービスを終了しました。今後は[GBBINFO-JPN](https://gbbinfo-jpn.onrender.com/)をご利用ください。")
 
-st.page_link(
-    "pages/世界地図.py",
-    label="GBB 出場者世界地図",
-    icon="🗺️",
-    help="GBB出場者の名前を世界地図上に表示します。",
-    use_container_width=True
-)
-st.page_link(
-    "pages/出場者.py",
-    label="GBB 全出場者一覧",
-    icon="🎤",
-    help="GBB出場者の一覧です。カテゴリー、国で絞り込みができます。",
-    use_container_width=True
-)
-st.page_link(
-    "pages/辞退者.py",
-    label="GBB 辞退者一覧",
-    icon="😭",
-    help="GBB出場をキャンセルした方の一覧です。",
-    use_container_width=True
-)
-st.page_link(
-    "pages/結果.py",
-    label="GBB 最終結果一覧",
-    icon="🏆",
-    help="GBBの結果一覧です。",
-    use_container_width=True
-)
-st.page_link(
-    "pages/chat.py",
-    label="GBBINFO-AI (準備中)",
-    icon="🤖",
-    help="GBBINFO-AIとチャットできます。",
-    use_container_width=True,
-    disabled=True
-)
+st.link_button("GBBINFO-JPN", "https://gbbinfo-jpn.onrender.com/")
 
-st.markdown('---')
-
-st.link_button("GBBINFO-JPN", "https://gbbinfo-jpn.jimdofree.com/")
-
-st.markdown("made by [GBBINFO-JPN](https://gbbinfo-jpn.jimdofree.com/) owner NOT swissbeatbox")
+st.markdown("made by [GBBINFO-JPN](https://gbbinfo-jpn.onrender.com/) owner NOT swissbeatbox")

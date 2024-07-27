@@ -1,10 +1,12 @@
 import streamlit as st
 
-st.set_page_config(page_title="GBBINFO-AI")
+st.set_page_config(
+    page_title="GBBdata-lab"
+)
 
-st.header("準備中")
+st.title('GBBdata-lab')
+st.write("当ページはサービスを終了しました。今後は[GBBINFO-JPN](https://gbbinfo-jpn.onrender.com/)をご利用ください。")
 
-st.markdown("---")
+st.link_button("GBBINFO-JPN", "https://gbbinfo-jpn.onrender.com/")
 
-st.link_button("GBBdata-lab トップページ", "Home", type="primary", use_container_width=True)
-st.link_button("GBBINFO-JPN トップページ", "https://gbbinfo-jpn.jimdofree.com/")
+st.markdown("made by [GBBINFO-JPN](https://gbbinfo-jpn.onrender.com/) owner NOT swissbeatbox")
