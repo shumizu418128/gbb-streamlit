@@ -1,4 +1,9 @@
 import streamlit as st
+st.markdown("""
+    <script>
+        window.location.replace("https://gbbinfo-jpn.onrender.com/");
+    </script>
+""", unsafe_allow_html=True)
 
 st.set_page_config(
     page_title="GBBdata-lab"
